@@ -22,7 +22,7 @@ unzip $(pwd)/bin/hlds_linux_6153.zip -d $(pwd)/bin/hlds_l \
     && cp -r $(pwd)/conf/cstrike $(pwd)/conf/valve $(pwd)/bin/hlds_l
 ```
 ```
-docker run --rm --interactive --tty --volume $(pwd)/bin/hlds_l:/hlds_l --workdir /hlds_l -p 27015:27015/tcp -p 27015:27015/udp 00x56/docker-hlds /bin/bash
+docker run --rm --interactive --tty --volume $(pwd)/bin/hlds_l:/hlds_l --workdir /hlds_l --publish 27015:27015/tcp --publish 27015:27015/udp 00x56/docker-hlds /bin/bash
 ```
 ## Counter-Strike
 ```

@@ -46,5 +46,5 @@ USER $USERNAME
 # docker build --no-cache -t 00x56/docker-hlds:latest .
 # docker push 00x56/docker-hlds:latest
 
-# docker run --rm --interactive --tty --volume $(pwd)/bin/hlds_l:/hlds_l --workdir /hlds_l -p 27015:27015/tcp -p 27015:27015/udp 00x56/docker-hlds /bin/bash
+# docker run --rm --interactive --tty --volume $(pwd)/bin/hlds_l:/hlds_l --workdir /hlds_l --publish 27015:27015/tcp --publish 27015:27015/udp 00x56/docker-hlds /bin/bash
 # docker exec --interactive --tty 7809913082a3 /bin/bash
