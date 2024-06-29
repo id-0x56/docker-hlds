@@ -48,3 +48,6 @@ USER $USERNAME
 
 # docker run --rm --interactive --tty --volume $(pwd)/bin/hlds_l:/hlds_l --workdir /hlds_l --publish 27015:27015/tcp --publish 27015:27015/udp 00x56/docker-hlds /bin/bash
 # docker exec --interactive --tty 7809913082a3 /bin/bash
+
+# docker run --interactive --tty --volume $(pwd)/bin/hlds_l:/hlds_l --workdir /hlds_l --publish 27015:27015/tcp --publish 27015:27015/udp --detach --restart unless-stopped 00x56/docker-hlds /bin/sh -c 'chmod +x /hlds_l/hlds_* && mkdir -p $HOME/.steam/sdk32 && ln -snf /hlds_l/steamclient.so $HOME/.steam/sdk32/steamclient.so && /hlds_l/hlds_run -game cstrike -nomaster -insecure -pingboost 1 +map de_dust2 +maxplayers 12 +rcon_password password'
+# docker run --interactive --tty --volume $(pwd)/bin/hlds_l:/hlds_l --workdir /hlds_l --publish 27020:27015/tcp --publish 27020:27015/udp --detach --restart unless-stopped 00x56/docker-hlds /bin/sh -c 'chmod +x /hlds_l/hlds_* && mkdir -p $HOME/.steam/sdk32 && ln -snf /hlds_l/steamclient.so $HOME/.steam/sdk32/steamclient.so && /hlds_l/hlds_run -game valve -nomaster -insecure -pingboost 1 +map crossfire +maxplayers 12 +rcon_password password'
